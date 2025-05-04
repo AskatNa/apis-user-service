@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.service.frontend.client.v1;
 
-import "google/protobuf/timestamp.proto";
+import "base/frontend/v1/client.proto";
 
 option go_package = "github.com/AskatNa/apis-gen-user-service/service/frontend/client/v1;client";
 
@@ -20,6 +20,21 @@ service ClientService {
   // Create: create a client (used for registration)
   //------------------------
   rpc Create(CreateRequest) returns (CreateResponse);
+
+  //------------------------
+  // Get: get a client information
+  //------------------------
+  rpc Get(GetRequest) returns (GetResponse);
+
+  //------------------------
+  // Update: update a client information
+  //------------------------
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+
+  //------------------------
+  // Update: update a client information
+  //------------------------
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
 }
 
 message CreateRequest {
@@ -28,7 +43,46 @@ message CreateRequest {
   // password
   string password = 2;
 }
+
 message CreateResponse {
   // id of a new entity
   uint64 id = 1;
 }
+
+message GetRequest {
+  // id
+  uint64 id = 1;
+}
+
+message GetResponse {
+  // client struct
+  base.frontend.v1.Client client = 1;
+}
+
+// Update request
+message UpdateRequest {
+  // client id
+  uint64 id = 1;
+  // name
+  string name = 2;
+  // email
+  string email = 3;
+  // phone
+  string phone = 4;
+  // password
+  string password = 5;
+  // old password
+  string old_password = 6;
+}
+
+message UpdateResponse {
+  // client struct
+  base.frontend.v1.Client client = 1;
+}
+
+message DeleteRequest {
+  // id
+  uint64 id = 1;
+}
+
+message DeleteResponse {}
