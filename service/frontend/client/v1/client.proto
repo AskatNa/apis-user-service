@@ -90,7 +90,7 @@ message GetRequest {
 
 message GetResponse {
   // client struct
-  base.frontend.v1.Client client = 1;
+  base.frontend.v1.Customer customer = 1;
 }
 
 // Update request
@@ -111,7 +111,7 @@ message UpdateRequest {
 
 message UpdateResponse {
   // client struct
-  base.frontend.v1.Client client = 1;
+  base.frontend.v1.Customer customer = 1;
 }
 
 message DeleteRequest {
