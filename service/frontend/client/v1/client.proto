@@ -47,10 +47,10 @@ service CustomerService {
 }
 
 message RegisterRequest {
+  //email
+  string email = 1;
   // password
-  string password = 3;
-  // phone 
-  string phone = 4;
+  string password = 2;
 }
 
 message RegisterResponse {
