@@ -47,10 +47,6 @@ service CustomerService {
 }
 
 message RegisterRequest {
-  // name
-  string name = 1;
-  // email
-  string email = 2;
   // password
   string password = 3;
   // phone 
