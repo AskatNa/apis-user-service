@@ -4,7 +4,7 @@ package user.service.frontend.client.v1;
 
 import "base/frontend/v1/client.proto";
 
-option go_package = "github.com/AskatNa/apis-gen-user-service/service/frontend/client/v1;client";
+option go_package = "github.com/AskatNa/apis-gen-user-service/service/frontend/customer/v1;customer";
 
 //------------------------
 // UserClient service:
