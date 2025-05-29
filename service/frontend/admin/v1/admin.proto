@@ -1,11 +1,25 @@
+syntax = "proto3";
+
+package user.service.frontend.customer.v1;
+
+import "base/frontend/v1/customer.proto";
+
+option go_package = "github.com/AskatNa/apis-gen-user-service/service/frontend/admin/v1;admin";
 // Role enum
 enum Role {
     ROLE_UNSPECIFIED = 0;
     ROLE_CUSTOMER = 1;
     ROLE_ADMIN = 2;
 }
-
-// Admin service definition
+//------------------------
+// UserClient service:
+//------------------------
+// Format: proto
+// client: frontend (web, native apps)
+// server: user-service
+// Access:
+//   gRPC
+//---------------------------------------------------------------------------------
 service AdminService {
     rpc GetCustomerByEmail(GetCustomerByEmailRequest) returns (GetCustomerByEmailResponse) {}
     rpc UpdateCustomer(UpdateCustomerRequest) returns (UpdateCustomerResponse) {}
@@ -19,7 +33,7 @@ message GetCustomerByEmailRequest {
 }
 
 message GetCustomerByEmailResponse {
-    Customer customer = 1;
+    base.frontend.v1.Customer customer = 1;
 }
 
 message UpdateCustomerRequest {
@@ -30,7 +44,7 @@ message UpdateCustomerRequest {
 }
 
 message UpdateCustomerResponse {
-    Customer customer = 1;
+    base.frontend.v1.Customer customer = 1;
 }
 
 message DeleteCustomerRequest {
@@ -47,6 +61,6 @@ message ListCustomersRequest {
 }
 
 message ListCustomersResponse {
-    repeated Customer customers = 1;
+    repeated base.frontend.v1.Customer customer = 1;
     int32 total_count = 2;
 }
