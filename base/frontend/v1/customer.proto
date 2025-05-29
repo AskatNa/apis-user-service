@@ -20,4 +20,6 @@ message Customer {
   google.protobuf.Timestamp updated_at = 6;
   // check client status
   bool is_deleted = 7;
+   // user role (customer, admin)
+  string role = 8;
 }
