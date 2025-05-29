@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package user.service.frontend.client.v1;
+package user.service.frontend.customer.v1;
 
-import "base/frontend/v1/client.proto";
+import "base/frontend/v1/customer.proto";
 
 option go_package = "github.com/AskatNa/apis-gen-user-service/service/frontend/customer/v1;customer";
 
